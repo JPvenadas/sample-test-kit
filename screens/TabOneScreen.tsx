@@ -1,27 +1,22 @@
-import React from "react";
-import { StyleSheet } from 'react-native';
-import { View, Image, Text, Dimensions, TextInput } from "react-native";
-import Heading from "../components/Heading";
-import LiveImage from "../components/LiveImage";
-import Form from "../components/Form";
-import { withSafeAreaInsets } from "react-native-safe-area-context";
-import Footer from "../components/Footer";
+import React from 'react'
+import { View,StyleSheet, Image, Text, Dimensions, TextInput } from "react-native";
+import Heading from '../components/Heading';
+import Signupform from '../components/Signupform';
 
-export default function TabOneScreen() {
+const TabOneScreen = () => {
   return (
-    <View style={styles.container}>
-     <Heading/>
-     <LiveImage/>
-     <Form/>
-     <Footer/>
-    </View>
-  );
+   <View style={styles.container}>
+     <Heading formtype='Signup'/>
+     <Signupform/>
+   </View>
+  )
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    alignItems: "center"
+    alignItems: "center",
   }
-});
+})
+
+export default TabOneScreen

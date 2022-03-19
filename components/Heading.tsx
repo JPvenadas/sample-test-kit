@@ -1,13 +1,17 @@
 import { StyleSheet, View, Text, Button } from "react-native";
 import React from 'react'
 
-const Heading = () => {
+interface props{
+  formtype: 'Login' | 'Signup'
+}
+
+const Heading = ({formtype}: props) => {
     
   return (
     <View style={styles.container}>
-        <Text>Does'nt have an account yer?</Text>
+        <Text>{formtype === 'Login'? "Doesn't have an account yet?": 'Already have an account?'} </Text>
         <Button 
-        title='Sign up'
+        title={formtype === 'Login'? "Signup": 'Login'}
         color='#917be8'
         onPress={()=>{}}/>
     </View>

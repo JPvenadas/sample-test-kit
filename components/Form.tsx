@@ -27,8 +27,8 @@ const Form = () => {
 
 const styles = StyleSheet.create({
     input:{
-        borderColor: '#917be8',
-        borderWidth: 1,
+        borderBottomColor: 'gray',
+        borderBottomWidth: 1,
         padding: 8,       
         width: 300,
         marginBottom: 20,
