@@ -6,7 +6,7 @@ const LiveImage = () => {
   return (
    <View style={styles.container}>
        <LottieView source={
-          require('../assets/lottie/70640-floating-magic-link-login.json')}
+          require('../assets/lottie/38435-register.json')}
         autoPlay={true}
         loop={true}
         style={styles.image}/>
@@ -16,14 +16,14 @@ const LiveImage = () => {
 
 const styles = StyleSheet.create({
     container: {
-       height: 350,
-       display: 'flex',
-       justifyContent: 'center',
-       alignItems: 'center'
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: 250
     },
     image: {
-        width: '100%',
-        height:250,
+       width: '100%',
+       height: 200,
       },
 })
 

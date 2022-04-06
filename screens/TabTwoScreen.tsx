@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 export default function TabTwoScreen() {
   return (
     <View style={styles.container}>
-     <Heading/>
+     <Heading formtype="Login"/>
      <LiveImage/>
      <Form/>
      <Footer/>
