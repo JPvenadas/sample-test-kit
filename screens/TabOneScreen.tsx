@@ -1,21 +1,21 @@
 import React from 'react'
-import { View,StyleSheet, Image, Text, Dimensions, TextInput } from "react-native";
-import Heading from '../components/Heading';
-import Signupform from '../components/Signupform';
+import {ScrollView,View,StyleSheet, Image, Text, Dimensions, TextInput } from "react-native";
+import { withSafeAreaInsets } from 'react-native-safe-area-context';
+import RegisterForm from '../components/RegisterForm';
+import LiveImage from '../components/LiveImage';
 
 const TabOneScreen = () => {
   return (
-   <View style={styles.container}>
-     <Heading formtype='Signup'/>
-     <Signupform/>
-   </View>
+    <ScrollView style={styles.mainContainer}>
+      <LiveImage/>
+      <RegisterForm/>
+    </ScrollView>
   )
 }
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex: 1,
-    backgroundColor: 'white',
-    alignItems: "center",
+    backgroundColor: 'white'
   }
 })
 
