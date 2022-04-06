@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
-import { Text, TextInput, View, StyleSheet } from 'react-native'
+import { Text, TextInput, View, Alert, StyleSheet } from 'react-native'
 import { Button, Input } from 'react-native-elements'
 import { Formik } from 'formik'
 import * as yup from 'yup'
 
 const validation = yup.object({
-    confirmpassword: yup.string().required('*Required'),
+    confirmpassword: yup.string().required('Confirmation Required'),
     email: yup.string().required('Email address is required')
         .matches(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/,
             'Invalid email address'),
-    firstname: yup.string().required('*Required'),
-    password: yup.string().required('*Required'),
-    lastname: yup.string().required('*Required'),
+    firstname: yup.string().required(' Firstname Required'),
+    password: yup.string().required('Password Required'),
+    lastname: yup.string().required('Lastname Required'),
      
 });
 
@@ -34,6 +34,7 @@ export class RegisterForm extends Component {
                   onSubmit={
                       (values, errors) => {
                           console.log(values)
+                          Alert.alert('Registration Successful')
                       }
                   }
                   validationSchema = {validation}
@@ -46,11 +47,11 @@ export class RegisterForm extends Component {
                           onChangeText={handleChange('firstname')}  
                           placeholder='FirstName' />
 
-                              {errors.firstname && touched.firstname ?
+                              {errors.firstname && touched.firstname ? 
                                   <Text style={styles.error}>{errors.firstname}</Text> :
                                   null
                               }
-
+                              
                          </View>
                          <View style={styles.inputContainer}>
                           <TextInput 
@@ -105,7 +106,13 @@ export class RegisterForm extends Component {
                               <Button
                                   buttonStyle={styles.button}
                                   title='Register'
-                                  onPress={handleSubmit} />
+                                  onPress={()=>{
+                                      errors.firstname? Alert.alert(errors.firstname):
+                                      errors.lastname? Alert.alert(errors.lastname):
+                                      errors.email? Alert.alert(errors.email):
+                                      errors.password? Alert.alert(errors.password):
+                                      errors.confirmpassword? Alert.alert(errors.confirmpassword): ''
+                                      handleSubmit()}} />
                           </View>
                          
                           <View style={styles.inputContainer}>
